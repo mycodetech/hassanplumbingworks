@@ -1,38 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>Hassan Plumbing Works</title>
-<link rel='stylesheet' href='css/style.css'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Hassan Plumbing Works</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="container">
-    <div class="logo">
-      <img src="images/H-removebg-preview.png" alt="HPW Logo">
-    </div>
-    <ul id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <!-- ===== Contact Section ===== -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Use the form below or email us directly.</p>
 
-<main>
-    <h1>Contact Us</h1>
-    <p>Click below to email us directly:</p>
-    <a href="mailto:hassanplumbingworks@gmail.com" class="contact-btn">Send Email</a>
-    </main>
+    <form id="contactForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <input type="text" id="phone" name="phone" placeholder="Your Contact Number" required />
+      <input type="text" id="service" name="service" placeholder="Service Required" required />
+      <input type="text" id="address" name="address" placeholder="Site Address" />
+      <textarea id="message" name="message" rows="5" placeholder="Your Message"></textarea>
 
-<footer>
-  <p>&copy; 2025 Hassan Plumbing Works | All Rights Reserved</p>
-</footer>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
 
-<script src='js/script.js'></script>
+    <br>
+    <a href="mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:" 
+       class="btn-primary">Contact via Email</a>
+  </section>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const address = document.getElementById('address').value;
+      const message = document.getElementById('message').value;
+
+      const mailtoLink = `mailto:hassanplumbingworks@gmail.com?subject=Service Inquiry&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AContact Number: ${encodeURIComponent(phone)}%0AService Required: ${encodeURIComponent(service)}%0ASite Address: ${encodeURIComponent(address)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
+
+      window.location.href = mailtoLink;
+    });
+  </script>
+
 </body>
 </html>

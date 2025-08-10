@@ -92,43 +92,54 @@
 </section>
 
 <!-- CONTACT -->
- <section id="contact" class="contact-section" data-aos="fade-up">
+<section id="contact" class="contact-section" data-aos="fade-up">
   <div class="container">
     <h2>Contact Us</h2>
-    <p>Have a plumbing project? Get in touch directly via email.</p>
-    <p>Fill out the form below or contact us directly via email.</p>
-     <!-- Existing Form -->
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <br>
-    <input type="email" placeholder="Your Email" required>
-    <br>
-    <textarea placeholder="Your Message" rows="5" required></textarea>
-    <br>
-    <button type="submit" class="btn-primary">Send Message</button>
-  </form>
-  <!-- Direct Email Button -->
-  <br>
-  <a href="mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:" 
-     class="btn-primary">
-    Contact Us via Email
-  </a>
+    <p>Have a plumbing project? Fill out the form or email us directly — we’ll get back to you quickly!</p>
+
+    <form id="contactForm" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Contact Number" required>
+      <input type="text" name="service" placeholder="Service Required" required>
+      <textarea name="message" rows="6" placeholder="Additional Details (Eg: Site Address)"></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+
+    <a id="contactEmailBtn" class="btn-secondary">Contact Us via Email</a>
   </div>
 </section>
 
 <script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent page refresh
-  
-  let name = document.getElementById('name').value;
-  let email = document.getElementById('email').value;
-  let message = document.getElementById('message').value;
-  
-  let mailtoLink = `mailto:hassanplumbingworks@gmail.com?subject=Service Inquiry from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0A%0A${encodeURIComponent(message)}`;
-  
-  window.location.href = mailtoLink;
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = encodeURIComponent(this.name.value);
+  const email = encodeURIComponent(this.email.value);
+  const phone = encodeURIComponent(this.phone.value);
+  const service = encodeURIComponent(this.service.value);
+  const message = encodeURIComponent(this.message.value);
+
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const body = `Hello Hassan Plumbing Works,%0A%0AName: ${name}%0AEmail: ${email}%0AContact Number: ${phone}%0AService Required: ${service}%0AAdditional Details: ${message}`;
+
+  if (isMobile) {
+    window.location.href = `mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=${body}`;
+  } else {
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=hassanplumbingworks@gmail.com&su=Service%20Inquiry&body=${body}`, "_blank");
+  }
 });
+
+const emailBtn = document.getElementById("contactEmailBtn");
+if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+  emailBtn.href = "mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:";
+} else {
+  emailBtn.href = "https://mail.google.com/mail/?view=cm&fs=1&to=hassanplumbingworks@gmail.com&su=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:";
+  emailBtn.target = "_blank";
+}
 </script>
+
+
 
 <!-- FOOTER -->
 <footer class="footer">

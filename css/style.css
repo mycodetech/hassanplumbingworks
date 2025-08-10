@@ -91,6 +91,7 @@ margin-left: auto; /* pushes menu to far right */
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--secondary-color); /* Gold */
 }
 /* Keep max-width on smaller screens if needed */
 @media (max-width: 1200px) {
@@ -232,14 +233,76 @@ section h2 {
   padding: 0 15px 15px;
 }
 
-/* ===== Contact Section ===== */
+/* ===== Contact Section Updated Styles ===== */
 .contact-section {
   background: #fff;
+  padding: 50px 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 5px rgba(245,183,0,0.5);
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-decoration: none;
   text-align: center;
+  font-weight: bold;
+  cursor: pointer;
 }
-.contact-section p {
-  margin-bottom: 20px;
+
+.btn-primary {
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  border: none;
 }
+
+.btn-primary:hover {
+  background: #d4a100;
+}
+
+.btn-secondary {
+  background: var(--primary-color);
+  color: var(--text-light);
+  margin-top: 15px;
+}
+
+.btn-secondary:hover {
+  background: #142c44;
+}
+
 
 /* ===== Footer ===== */
 .footer {
@@ -292,7 +355,7 @@ section h2 {
   .hamburger {
     display: block;
     background: transparent;
-    color: #fff; /* icon remains visible */
+    color: var(--secondary-color); /* icon remains visible */
   }
 
   .hero-content h1 {
