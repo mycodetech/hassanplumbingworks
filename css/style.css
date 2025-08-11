@@ -353,10 +353,18 @@ section h2 {
   }
 
   .hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light); /* instantly visible like logo */
+}
+
+@media (max-width: 768px) {
+  .hamburger {
     display: block;
-    background: transparent;
-    color: var(--secondary-color); /* icon remains visible */
+    color: var(--secondary-color); /* gold in mobile view */
   }
+}
 
   .hero-content h1 {
     font-size: 2rem;
