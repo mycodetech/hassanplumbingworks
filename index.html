@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preload" href="images/hpw-logo.png" as="image">
+<link rel="preload" href="css/style.min.css" as="style">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HASSANPLUMBINGWORKS</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/script.js"></script>
+  
+  <!-- SEO Title & Description -->
+  <title>Hassan Plumbing Works | Commercial & High-Rise Plumbing Experts</title>
+  <meta name="description" content="Hassan Plumbing Works - Precision Commercial & High-Rise Plumbing for over 36 years. Internal, external, and STP installation services for reliable water systems.">
+  <meta name="keywords" content="Hassan Plumbing Works, Commercial Plumbing, High-Rise Plumbing, Internal Piping, External Piping, STP Installation, Drainage Systems">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:title" content="Hassan Plumbing Works - Commercial & High-Rise Plumbing Experts">
+  <meta property="og:description" content="Precision Commercial & High-Rise Plumbing for over 36 years. Internal, external, and STP installation services for reliable water systems.">
+  <meta property="og:image" content="images/hpw-logo.png">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/hpw-logo.png">
+  
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="css/style.min.css" />
+  <script defer src="js/script.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="preload" href="images/hpw-logo.png" as="image">
+<link rel="preload" href="css/style.min.css" as="style">
 </head>
 <body>
 
 <!-- PRELOADER -->
 <div id="preloader">
-  <img src="images/hpw-logo.png" alt="Loading Logo" class="preloader-logo" />
+  <img src="images/hpw-logo.png" alt="HPW Logo Loading" class="preloader-logo" loading="lazy" />
 </div>
 
 <!-- NAVBAR -->
 <header class="navbar">
   <div class="container">
     <div class="logo">
-  <a href="#home">
-    <img src="images/hpw-logo.png" alt="HPW Logo" />
-  </a>
-</div>
+      <a href="#home">
+        <img src="images/hpw-logo.png" alt="Hassan Plumbing Works Logo" loading="lazy" />
+      </a>
+    </div>
     <nav>
       <div class="hamburger" id="hamburger">&#9776;</div>
       <ul class="nav-links" id="nav-links">
@@ -40,8 +61,7 @@
 <section id="home" class="hero-section" style="background-image: url('images/bg.img.jpg');">
   <div class="overlay"></div>
   <div class="hero-content" data-aos="fade-up">
-    <h1>HassanPlumbingWorks 
-      <br>Excellence</h1>
+    <h1>Hassan Plumbing Works <br>Excellence</h1>
     <p>Precision Commercial & High-Rise Plumbing for over 36 years.</p>
     <a href="#contact" class="btn-primary">Contact Us</a>
   </div>
@@ -78,12 +98,10 @@
     <h2>Major Projects</h2>
     <div class="projects-grid">
       <div class="project-card">
-        <!-- <img src="images/" alt="Project 1"> -->
         <h3>High-Rise Tower</h3>
         <p>Complete plumbing for a 40-floor residential building with rooftop water systems.</p>
       </div>
       <div class="project-card">
-        <!-- <img src="images/" alt="Project 2"> -->
         <h3>Commercial Complex</h3>
         <p>Full STP, drainage, and piping for a major mall and business center.</p>
       </div>
@@ -95,51 +113,16 @@
 <section id="contact" class="contact-section" data-aos="fade-up">
   <div class="container">
     <h2>Contact Us</h2>
-    <p>Have a plumbing project? Fill out the form or email us directly — we’ll get back to you quickly!</p>
+    <p>We’re here to help with all your plumbing needs. Reach us through WhatsApp or Email.</p>
 
-    <form id="contactForm" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <input type="text" name="phone" placeholder="Contact Number" required>
-      <input type="text" name="service" placeholder="Service Required" required>
-      <textarea name="message" rows="6" placeholder="Additional Details (Eg: Site Address)"></textarea>
-      <button type="submit" class="btn-primary">Send Message</button>
-    </form>
+    <a href="mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:" 
+   class="btn-primary"
+   onclick="if(!navigator.userAgent.match(/Mobi|Android/i) && !confirm('Click OK to use your mail app, or Cancel to use Gmail in your browser.')){window.open('https://mail.google.com/mail/?view=cm&to=hassanplumbingworks@gmail.com&su=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:', '_blank'); return false;}">
+  Contact via Email
+</a>
 
-    <a id="contactEmailBtn" class="btn-secondary">Contact Us via Email</a>
   </div>
 </section>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const name = encodeURIComponent(this.name.value);
-  const email = encodeURIComponent(this.email.value);
-  const phone = encodeURIComponent(this.phone.value);
-  const service = encodeURIComponent(this.service.value);
-  const message = encodeURIComponent(this.message.value);
-
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  const body = `Hello Hassan Plumbing Works,%0A%0AName: ${name}%0AEmail: ${email}%0AContact Number: ${phone}%0AService Required: ${service}%0AAdditional Details: ${message}`;
-
-  if (isMobile) {
-    window.location.href = `mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=${body}`;
-  } else {
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=hassanplumbingworks@gmail.com&su=Service%20Inquiry&body=${body}`, "_blank");
-  }
-});
-
-const emailBtn = document.getElementById("contactEmailBtn");
-if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-  emailBtn.href = "mailto:hassanplumbingworks@gmail.com?subject=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:";
-} else {
-  emailBtn.href = "https://mail.google.com/mail/?view=cm&fs=1&to=hassanplumbingworks@gmail.com&su=Service%20Inquiry&body=Hello%20Hassan%20Plumbing%20Works,%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AName:%0AContact%20Number:%0AService%20Required:%0ASite%20Address:";
-  emailBtn.target = "_blank";
-}
-</script>
-
-
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -152,8 +135,19 @@ if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
 
 <!-- WhatsApp -->
 <a href="https://wa.me/9885932013" class="whatsapp-float" target="_blank">
-  <img src="images/whatsapp--v1.png" alt="WhatsApp" />
+  <img src="images/whatsapp--v1.png" alt="WhatsApp Contact" loading="lazy" />
 </a>
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
 
 </body>
 </html>
+

@@ -1,0 +1,50 @@
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background-color:#f9f9f9;color:#222;line-height:1.6}:root{--primary-color:#0d1b2a;--secondary-color:#f5b700;--text-light:#fff;--text-dark:#222}#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--primary-color);display:flex;justify-content:center;align-items:center;z-index:9999}.preloader-logo{width:120px;animation:pulse 1.5s infinite ease-in-out}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}.navbar{background-color:transparent;padding:20px 30px;color:#fff;position:fixed;width:100%;top:0;z-index:999;box-shadow:none}.navbar .container{display:flex;justify-content:space-between;align-items:center;margin:0;max-width:none;width:100%;padding:0 40px}.navbar .logo img{height:50px;flex-shrink:0}.navbar ul{display:flex;gap:20px;list-style:none;margin-left:auto}.navbar ul li a{color:var(--text-light);text-decoration:none;font-weight:bold;transition:color .3s}.navbar ul li a:hover{color:var(--secondary-color)}.hamburger{display:none;font-size:1.5rem;cursor:pointer;color:var(--secondary-color)}@media(max-width:1200px){.navbar .container{max-width:1100px;margin:0 auto;padding:0 20px}}.hero-section{height:90vh;background-size:cover;background-position:center;position:relative;display:flex;justify-content:center;align-items:center;color:var(--text-light);text-align:center;overflow:hidden}.hero-section::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:inherit;filter:blur(2px);transform:scale(1.05);z-index:0}.hero-section .overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:1}.hero-content{position:relative;z-index:2}.hero-content h1{font-size:2.8rem;margin-bottom:10px}.hero-content p{font-size:1.2rem;margin-bottom:20px}.btn-primary{background:var(--secondary-color);color:var(--text-dark);padding:10px 20px;border-radius:5px;text-decoration:none;font-weight:bold;transition:.3s}.btn-primary:hover{background:#d4a100}section{padding:60px 20px}section h2{text-align:center;margin-bottom:30px;color:var(--primary-color)}.about-section{background:#fff;max-width:1100px;margin:auto}.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}.service-card{background:var(--primary-color);color:var(--text-light);padding:20px;border-radius:8px;text-align:center;font-weight:bold;transition:transform .3s,background .3s}.service-card:hover{background:var(--secondary-color);color:var(--text-dark);transform:translateY(-5px)}.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.project-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,.1);transition:transform .3s}.project-card:hover{transform:translateY(-5px)}.project-card img{width:100%;height:200px;object-fit:cover}.project-card h3{padding:15px;color:var(--primary-color)}.project-card p{padding:0 15px 15px}.contact-section{background:#fff;padding:50px 20px;border-radius:10px;max-width:900px;margin:auto;box-shadow:0 4px 15px rgba(0,0,0,.05);text-align:center}.btn-primary,.btn-secondary{display:inline-block;padding:12px 20px;border-radius:6px;font-size:1rem;text-decoration:none;text-align:center;font-weight:bold;cursor:pointer}.btn-primary{background:var(--secondary-color);color:var(--text-dark);border:none}.btn-primary:hover{background:#d4a100}.btn-secondary{background:var(--primary-color);color:var(--text-light);margin-top:15px}.btn-secondary:hover{background:#142c44}.footer{background:var(--primary-color);color:var(--text-light);text-align:center;padding:15px}.whatsapp-float{position:fixed;bottom:20px;right:20px;z-index:999}.whatsapp-float img{width:50px;height:50px;border-radius:50%;box-shadow:0 4px 6px rgba(0,0,0,.2);transition:transform .3s}.whatsapp-float img:hover{transform:scale(1.1)}@media(max-width:768px){.navbar ul{flex-direction:column;display:none;background:rgba(0,0,0,.5);position:absolute;top:60px;right:0;width:200px;padding:20px;border-radius:0 0 8px 8px}.navbar ul.show{display:flex}.navbar ul li a{color:#fff}.hamburger{display:block;color:var(--secondary-color)}.hero-content h1{font-size:2rem}}/* === Mobile Fixes === */
+
+/* 1. Mobile menu full width */
+@media (max-width: 768px) {
+  .nav-links {
+    width: 100%;
+    right: 0;
+    border-radius: 0;
+  }
+}
+
+/* 2. Make contact buttons full-width on very small screens */
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* 3. Reduce contact section padding for small devices */
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 30px 15px;
+  }
+}
+/* Prevent horizontal scroll on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 480px) {
+  .navbar .container {
+    padding: 10px 15px;
+  }
+}
+/* Default navbar links - white (for hero section) */
+.navbar a {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Apply scroll effect ONLY on desktop (min 769px) */
+@media (min-width: 769px) {
+  .navbar.scrolled a {
+    color: #0a0a0a; /* Dark text for white background */
+  }
+}
+
